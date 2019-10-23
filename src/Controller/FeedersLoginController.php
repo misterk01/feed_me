@@ -23,4 +23,12 @@ class FeedersLoginController extends AbstractController
     {
         return $this->twig->render('FeedersLogin/index.html.twig');
     }
+
+    public function firstname()
+    {
+        return '<div class="form-group">
+                <label for="exampleFormControlInput1">Email address</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>';
+    }
 }
