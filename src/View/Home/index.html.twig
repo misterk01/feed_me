@@ -1,5 +1,15 @@
 {% extends 'layout.html.twig' %}
 
-{% block content %}
-    <h1>Hello Wilder !</h1>
+{% block barTitle %}
+<h2> Découvre ton chef à deux pas de chez toi !</h2>
+{% endblock %}
+
+
+{% block searchBar%}
+    <form method="post" action ="">
+<div class="form-group">
+        {{ inputBar|raw }}
+</div>
+    {{ buttonBar |raw }}
+    </form>
 {% endblock %}
