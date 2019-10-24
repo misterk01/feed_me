@@ -1,5 +1,17 @@
-
 /* configuration barre de recherche */
-.searchBar{
-width: 80%;
+.searchBar {
+    width: 80%;
+    height: 50px;
+    margin-top: 100px;
+    border-color: lightgreen;
+    margin-left: 130px;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.container-fluid {
+    background-image: url("../images/accueil 2.jpeg");
+    height: 265px;
 }

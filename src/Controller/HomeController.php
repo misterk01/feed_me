@@ -14,9 +14,10 @@ class HomeController extends AbstractController
      *fonction création de champ pour la barre de recherche
      *
      */
-    public function input(){
+    public function input()
+    {
 
-        return"<input type='text' class='searchBar'  placeholder='Renseigne ton adresse'>";
+        return "<input type='text' class='searchBar'  placeholder='Renseigne ton adresse'>";
     }
 
 
@@ -24,9 +25,10 @@ class HomeController extends AbstractController
      *fonction création boutton pour submit
      *
      */
-    public function submit (){
+    public function submit()
+    {
 
-        return "<button type='button' class='btn btn-primary btn-lg' id='buttonBar'>". 'Go !'."</button>";
+        return "<button type='button' class='btn btn-primary  float-right' id='buttonBar'>" . 'Feed me !' . "</button>";
     }
 
     /**
@@ -39,9 +41,9 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        $searchBar= new HomeController();
-        $inputBar=$searchBar->input();
-        $buttonBar=$searchBar->submit();
-        return $this->twig->render('Home/index.html.twig', ['inputBar'=>$inputBar, 'buttonBar'=>$buttonBar]);
+        $searchBar = new HomeController();
+        $inputBar = $searchBar->input();
+        $buttonBar = $searchBar->submit();
+        return $this->twig->render('Home/index.html.twig', ['inputBar' => $inputBar, 'buttonBar' => $buttonBar]);
     }
 }

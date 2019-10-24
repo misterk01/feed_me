@@ -1,15 +1,16 @@
 {% extends 'layout.html.twig' %}
 
 {% block barTitle %}
-<h2> Découvre ton chef à deux pas de chez toi !</h2>
+    <h2> Découvre ton chef à deux pas de chez toi !</h2>
 {% endblock %}
 
-
-{% block searchBar%}
-    <form method="post" action ="">
-<div class="form-group">
-        {{ inputBar|raw }}
-</div>
-    {{ buttonBar |raw }}
-    </form>
+{% block searchBar %}
+    <div class="container-fluid">
+        <form method="post" action="">
+            <div class="form-group">
+                {{ inputBar|raw }}
+            </div>
+        </form>
+        {{ buttonBar |raw }}
+    </div>
 {% endblock %}
