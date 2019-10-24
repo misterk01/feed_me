@@ -90,21 +90,22 @@ class MealController extends AbstractController
      */
 
 
-    //   TODO : modifier to add for Meal Table
-//    public function add()
-//    {
-//
-//        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-//            $$mealManager = new MealManager();
-//            $item = [
-//                'title' => $_POST['title'],
-//            ];
-//            $id = $itemManager->insert($item);
-//            header('Location:/item/show/' . $id);
-//        }
-//
-//        return $this->twig->render('Item/add.html.twig');
-//    }
+//       TODO : modifier to add for Meal Table
+    public function add()
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $mealManager = new MealManager();
+            $item = [
+                'name' => $_POST['name'],
+                'description' => $_POST['description'],
+                'price' => $_POST['price'],
+            ];
+            $id = $mealManager->insert($item);
+            header('Location:/meal/show/' . $id);
+        }
+
+        return $this->twig->render('Meal/add.html.twig');
+    }
 
 
     /**
