@@ -35,8 +35,21 @@ class FeedersLoginManager extends AbstractManager
     public function insert(array $feeder): int
     {
         // prepared request
-        $statement = $this->pdo->prepare("INSERT INTO $this->table (`lastname`) VALUES (:lastname)");
+        $statement = $this->pdo->prepare(
+            "INSERT INTO $this->table (`lastname`,`firstname`, `mail`, `phone`, `siret`, `register_date`) 
+                        VALUES (:lastname, :firstname, :mail, :phone, :siret, :register_date)"
+        );
         $statement->bindValue('lastname', $feeder['lastname'], \PDO::PARAM_STR);
+        $statement->bindValue('firstname', $feeder['firstname'], \PDO::PARAM_STR);
+        $statement->bindValue('mail', $feeder['mail'], \PDO::PARAM_STR);
+        $statement->bindValue('phone', $feeder['phone'], \PDO::PARAM_INT);
+        $statement->bindValue('siret', $feeder['siret'], \PDO::PARAM_INT);
+        $statement->bindValue('number', $feeder['number'], \PDO::PARAM_STR);
+        $statement->bindValue('street', $feeder['street'], \PDO::PARAM_STR);
+        $statement->bindValue('code_postal', $feeder['code_postal'], \PDO::PARAM_INT);
+        $statement->bindValue('city', $feeder['city'], \PDO::PARAM_STR);
+        $statement->bindValue('country', $feeder['country'], \PDO::PARAM_STR);
+        $statement->bindValue('register_date', $feeder['register_date'], \PDO::PARAM_STR);
 
         if ($statement->execute()) {
             return (int)$this->pdo->lastInsertId();

@@ -35,6 +35,22 @@ class FeedersLoginController extends AbstractController
         return $this->twig->render('FeedersLogin/index.html.twig', ['feeders' => $feeders]);
     }
 
+    /**
+     * Display feeders informations specified by $id
+     *
+     * @param int $id
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function show(int $id)
+    {
+        $feedersLoginManager = new FeedersLoginManager();
+        $feeders = $feedersLoginManager->selectOneById($id);
+
+        return $this->twig->render('FeedersLogin/show.html.twig', ['feeders' => $feeders]);
+    }
 
     /**
      * Display feeders creation page
@@ -51,7 +67,19 @@ class FeedersLoginController extends AbstractController
             $feedersLoginManager = new FeedersLoginManager();
             $feeders = [
                 'lastname' => $_POST['lastname'],
+                'firstname' => $_POST['firstname'],
+                'mail' => $_POST['mail'],
+                'phone' => $_POST['phone'],
+                'siret' => $_POST['siret'],
+                'address_id' => $_POST['address_id'],
+                'number' => $_POST['number'],
+                'street' => $_POST['street'],
+                'code_postal' => $_POST['code_postal'],
+                'city' => $_POST['city'],
+                'country' => $_POST['country'],
+                'register_date' => $_POST['register_date'],
             ];
+
             $id = $feedersLoginManager->insert($feeders);
             header('Location:/FeedersLogin/show/' . $id);
         }

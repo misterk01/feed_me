@@ -1,26 +1,57 @@
-<form method="post">
-    <div class="form-group">
-        <input type="hidden" class="form-control" id="id" value="{{ feeder.id }}">
-    </div>
-    <div class="form-group">
-        <label for="lastname">Nom de famille</label>
-        <input type="text" class="form-control" id="lastname" name="lastname" value="{{ feeder.lastname }}">
-    </div>
-    <div class="form-group">
-        <label for="firstname">Prénom</label>
-        <input type="text" class="form-control" id="firstname" name="firstname" value="{{ feeder.firstname }}">
-    </div>
-    <div class="form-group">
-        <label for="mail">Email</label>
-        <input type="email" class="form-control" id="mail" name="mail" value="{{ feeder.mail }}">
-    </div>
-    <div class="form-group">
-        <label for="phone">Téléphone</label>
-        <input type="text" class="form-control" id="phone" name="phone" value="{{ feeder.phone }}">
-    </div>
-    <div class="form-group">
-        <label for="siret">Siret</label>
-        <input type="number" class="form-control" id="siret" name="siret" value="{{ feeder.siret }}">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<div class="container-fluid">
+    <form method="post">
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="id" value="{{ feeder.id }}">
+        </div>
+        <div class="form-group">
+            <label for="lastname">Nom de famille</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" value="{{ feeder.lastname }}">
+        </div>
+        <div class="form-group">
+            <label for="firstname">Prénom</label>
+            <input type="text" class="form-control" id="firstname" name="firstname" value="{{ feeder.firstname }}">
+        </div>
+        <div class="form-group">
+            <label for="mail">Email</label>
+            <input type="email" class="form-control" id="mail" name="mail" value="{{ feeder.mail }}">
+        </div>
+        <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="text" class="form-control" id="phone" name="phone" value="{{ feeder.phone }}">
+        </div>
+        <div class="form-group">
+            <label for="siret">Siret</label>
+            <input type="number" class="form-control" id="siret" name="siret" value="{{ feeder.siret }}">
+        </div>
+        <div class="form-group">
+            <input type="number" class="form-control" id="address_id" name="address_id"{{ feeder.address_id }}">
+        </div>
+        <div class="form-group">
+            <label for="number">Numéro de rue</label>
+            <input type="number" class="form-control" id="number" name="number" value="{{ feeder.number }}">
+        </div>
+        <div class="form-group">
+            <label for="street">Rue</label>
+            <input type="text" class="form-control" id="street" name="street" value="{{ feeder.street }}">
+        </div>
+        <div class="form-group">
+            <label for="code_postal">Code Postal</label>
+            <input type="number" class="form-control" id="code_postal" name="code_postal"
+                   value="{{ feeder.code_postal }}">
+        </div>
+        <div class="form-group">
+            <label for="city">Ville</label>
+            <input type="text" class="form-control" id="city" name="city" value="{{ feeder.city }}">
+        </div>
+        <div class="form-group">
+            <label for="country">Pays</label>
+            <input type="text" class="form-control" id="country" name="country" value="{{ feeder.country }}">
+        </div>
+        <div class="form-group">
+            <label for="register_date">Date</label>
+            <input type="date" class="form-control" id="register_date" name="register_date"
+                   value="{{ feeder.register_date }}">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
