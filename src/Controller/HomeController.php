@@ -28,7 +28,7 @@ class HomeController extends AbstractController
     public function submit()
     {
 
-        return "<button type='button' class='btn btn-primary' id='buttonBar'>" . 'Feed me !' . "</button>";
+        return "<button type='button' class='btn btn-primary buttonBar'>" . 'Feed me !' . "</button>";
     }
 
     /**

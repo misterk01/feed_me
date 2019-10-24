@@ -17,8 +17,13 @@
     height: 50px;
     border-color: lightgreen;
     width: 80%;
+    margin-top: 100px;
+
 }
 
 .homeTitle {
     text-align: center;
+}
+.buttonBar{
+    margin-top: 10px;
 }
