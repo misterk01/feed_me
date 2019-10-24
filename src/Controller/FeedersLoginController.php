@@ -1,18 +1,26 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: aurelwcs
- * Date: 08/04/19
- * Time: 18:40
+ * User: root
+ * Date: 11/10/17
+ * Time: 16:07
+ * PHP version 7
  */
 
 namespace App\Controller;
 
+use App\Model\FeedersLoginManager;
+
+/**
+ * Class FeedersLoginController
+ *
+ */
 class FeedersLoginController extends AbstractController
 {
 
+
     /**
-     * Display FeedersLogin page
+     * Display feeders listing
      *
      * @return string
      * @throws \Twig\Error\LoaderError
@@ -21,14 +29,33 @@ class FeedersLoginController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('FeedersLogin/index.html.twig');
+        $feedersLoginManager = new FeedersLoginManager();
+        $feeders = $feedersLoginManager->selectAll();
+
+        return $this->twig->render('FeedersLogin/index.html.twig', ['feeders' => $feeders]);
     }
 
-    public function firstname()
+
+    /**
+     * Display feeders creation page
+     *
+     * @return string
+     * @throws \Twig\Error\LoaderError
+     * @throws \Twig\Error\RuntimeError
+     * @throws \Twig\Error\SyntaxError
+     */
+    public function add()
     {
-        return '<div class="form-group">
-                <label for="exampleFormControlInput1">Email address</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-                </div>';
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $feedersLoginManager = new FeedersLoginManager();
+            $feeders = [
+                'lastname' => $_POST['lastname'],
+            ];
+            $id = $feedersLoginManager->insert($feeders);
+            header('Location:/FeedersLogin/show/' . $id);
+        }
+
+        return $this->twig->render('FeedersLogin/add.html.twig');
     }
 }

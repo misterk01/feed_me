@@ -1,0 +1,26 @@
+<form method="post">
+    <div class="form-group">
+        <input type="hidden" class="form-control" id="id" value="{{ feeder.id }}">
+    </div>
+    <div class="form-group">
+        <label for="lastname">Nom de famille</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" value="{{ feeder.lastname }}">
+    </div>
+    <div class="form-group">
+        <label for="firstname">Prénom</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" value="{{ feeder.firstname }}">
+    </div>
+    <div class="form-group">
+        <label for="mail">Email</label>
+        <input type="email" class="form-control" id="mail" name="mail" value="{{ feeder.mail }}">
+    </div>
+    <div class="form-group">
+        <label for="phone">Téléphone</label>
+        <input type="text" class="form-control" id="phone" name="phone" value="{{ feeder.phone }}">
+    </div>
+    <div class="form-group">
+        <label for="siret">Siret</label>
+        <input type="number" class="form-control" id="siret" name="siret" value="{{ feeder.siret }}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
