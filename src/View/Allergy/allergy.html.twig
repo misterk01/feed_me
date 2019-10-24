@@ -1,0 +1,20 @@
+{% block Allergies %}
+    <h1>Liste des allergies</h1>
+    {% for allergy in allergies %}
+        <form method="post" action="">
+        <ul>
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <input type="checkbox" id="scales" name="scales">
+                    <label for="scales">{{ allergy.name_allergy }}</label>
+                </div>
+            </div>
+            {{ allergy.description }}
+        </ul>
+    {% endfor %}
+
+
+    </form>
+{% endblock %}
+
+
