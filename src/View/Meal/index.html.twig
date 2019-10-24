@@ -1,0 +1,18 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+
+
+    <div class="card" style="width: 18rem;">
+        {% for meal in meals %}
+        <img src="/assets/images/meal_picture/image01.jpeg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{  meal.name_meal  }}</h5>
+            <p class="card-text">{{ meal.description_meal }}</p>
+            <h5 class="card-title">Quantité disponible : {{  meal.quantity_max }}</h5>
+            <h3 class="card-title">Prix : {{  meal.price }} €</h3>
+            <a href="#" class="btn btn-primary">Ajouter au panier</a>
+        </div>
+        {%  endfor %}
+    </div>
+{% endblock %}
