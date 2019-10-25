@@ -1,8 +1,9 @@
+{#edit MEAL#}
+
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1>Add a new item</h1>
-    <div class="container">
+    <h1>Edit item {{ item.title }}</h1>
     {% include 'Item/_form.html.twig' %}
-    </div>
+    <a href="/item/show/{{ item.id }}">Back</a>
 {% endblock %}
