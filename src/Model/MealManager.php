@@ -33,17 +33,17 @@ class MealManager extends AbstractManager
      * @return int
      */
 //TODO insertion dans la table meal
-//
-//    public function insert(array $meal): int
-//    {
-//        // prepared request
-//        $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
-//        $statement->bindValue('title', $meal['title'], \PDO::PARAM_STR);
-//
-//        if ($statement->execute()) {
-//            return (int)$this->pdo->lastInsertId();
-//        }
-//    }
+
+    public function insert(array $meal): int
+    {
+        // prepared request
+        $statement = $this->pdo->prepare("INSERT INTO $this->table (`title`) VALUES (:title)");
+        $statement->bindValue('title', $meal['title'], \PDO::PARAM_STR);
+
+        if ($statement->execute()) {
+            return (int)$this->pdo->lastInsertId();
+        }
+    }
 
 
     /**
