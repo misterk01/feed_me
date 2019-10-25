@@ -1,0 +1,29 @@
+/* configuration barre de recherche */
+
+::placeholder {
+    text-align: center;
+}
+
+.pictureHome {
+    display: flex;
+    background-image: url("../images/accueil 2.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 265px;
+
+}
+
+.searchBar {
+    height: 50px;
+    border-color: lightgreen;
+    width: 80%;
+    margin-top: 100px;
+
+}
+
+.homeTitle {
+    text-align: center;
+}
+.buttonBar{
+    margin-top: 10px;
+}
