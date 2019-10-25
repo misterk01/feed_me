@@ -10,7 +10,9 @@
         <div class="col-sm-4">
             <div class="card m-1" >
 
-                <img src="/assets/images/meal_picture/image01.jpeg" class="card-img-top" alt="...">
+
+
+                <img src= {{ "/assets/images/meal_picture/image0" ~ loop.index  ~ ".jpeg"}} class="card-img-top" alt="...">
                 <div class="card-body ">
                     <h5 class="card-title">{{ meal.name_meal }}</h5>
                     <p class="card-text">{{ meal.description_meal }}</p>

@@ -91,6 +91,7 @@ class MealController extends AbstractController
 
 
 //       TODO : modifier to add for Meal Table
+
     public function add()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -98,15 +99,15 @@ class MealController extends AbstractController
             $item = [
                 'name' => $_POST['name'],
                 'description' => $_POST['description'],
-                'price' => $_POST['price'],
+                'price' => $_POST['price']
             ];
-            $id = $mealManager->insert($item);
+            $pictures = [$_FILES];
+//            $id = $mealManager->insert($item);
             header('Location:/meal/show/' . $id);
         }
 
         return $this->twig->render('Meal/add.html.twig');
     }
-
 
     /**
      * Handle item deletion
