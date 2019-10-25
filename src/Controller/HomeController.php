@@ -10,6 +10,26 @@ namespace App\Controller;
 
 class HomeController extends AbstractController
 {
+    /**
+     *fonction création de champ pour la barre de recherche
+     *
+     */
+    public function input()
+    {
+
+        return "<input type='text' class='searchBar'  placeholder='Renseigne ton adresse'>";
+    }
+
+
+    /**
+     *fonction création boutton pour submit
+     *
+     */
+    public function submit()
+    {
+
+        return "<button type='button' class='btn btn-primary buttonBar'>" . 'Feed me !' . "</button>";
+    }
 
     /**
      * Display home page
@@ -21,6 +41,9 @@ class HomeController extends AbstractController
      */
     public function index()
     {
-        return $this->twig->render('Home/index.html.twig');
+        $searchBar = new HomeController();
+        $inputBar = $searchBar->input();
+        $buttonBar = $searchBar->submit();
+        return $this->twig->render('Home/index.html.twig', ['inputBar' => $inputBar, 'buttonBar' => $buttonBar]);
     }
 }
